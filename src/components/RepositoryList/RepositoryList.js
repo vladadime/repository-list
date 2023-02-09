@@ -6,7 +6,6 @@ const RepositoryList = ({data}) => {
     return (
         <div id="repository-list">
             <h1>Repository list</h1>
-            {data.length}
             {data.length && data.map((item) => (
                 <div id="repository-card" key={item.id}>
                     <Link
