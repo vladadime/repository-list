@@ -1,6 +1,5 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Repository from "./pages/Repository/Repository";
+import {HomePage, Repository} from "./pages";
 
 function App() {
     return (

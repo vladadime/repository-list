@@ -1,2 +1,4 @@
-export {default as HomePage} from './HomePage';
-export {default as Repository} from './Repository';
+export {default as HomePage}
+from './HomePage/HomePage';
+export {default as Repository}
+from './Repository/Repository';
