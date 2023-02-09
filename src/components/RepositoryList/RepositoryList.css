@@ -1,0 +1,27 @@
+#repository-card {
+    border: 1px solid black;
+    padding: 1em;
+    margin: 0.5em;
+}
+
+.repo-card-item {
+    padding: 0.25em;
+    max-width: 500px;
+}
+
+#repository-list-pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    list-style: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#repository-list-pagination li.active {
+    background-color: dodgerblue;
+    color: white;
+}
+#repository-list-pagination li:hover:not(.active) {
+    background-color: #ddd;
+}
