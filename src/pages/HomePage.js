@@ -17,12 +17,15 @@ const HomePage = () => {
     }
 
     const changeTab = (event) => {
-        const tabName = event.target.innerText.toLowerCase();
-        if(tab !== tabName) {
+        const tabName = event
+            .target
+            .innerText
+            .toLowerCase();
+        if (tab !== tabName) {
             setTab(tabName);
         }
-    } 
-    
+    }
+
     useEffect(() => {
         getGitRepos();
     }, [tab]);
