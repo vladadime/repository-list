@@ -1,0 +1,16 @@
+#repository-list-pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    list-style: none;
+    transition: background-color 0.1s;
+    cursor: pointer;
+}
+
+#repository-list-pagination li.active {
+    background-color: dodgerblue;
+    color: white;
+}
+#repository-list-pagination li:hover:not(.active) {
+    background-color: #ddd;
+}

@@ -1,9 +1,15 @@
-import HomePage from "./pages/HomePage";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HomePage, Repository} from "./pages";
 
 function App() {
     return (
         <div className="App">
-            <HomePage />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={< HomePage />}/>
+                    <Route path="/repository/:user/:repo" element={< Repository />}/>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

@@ -1,12 +1,14 @@
 import "./Header.css";
 
-const Header = () => {
+const Header = ({onClick}) => {
+    const tabs = ["React", "Vue", "Angular"];
+
     return (
         <header id="header">
             <ul id="tabs">
-                <li className="tab-item">React</li>
-                <li className="tab-item">Vue</li>
-                <li className="tab-item">Angular</li>
+                {tabs.map((item, index) => (
+                    <li className="tab-item" key={index} onClick={onClick}>{item}</li>
+                ))}
             </ul>
             <hr/>
         </header>
