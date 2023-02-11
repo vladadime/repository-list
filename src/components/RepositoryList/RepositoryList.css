@@ -1,10 +1,83 @@
-#repository-card {
-    border: 1px solid black;
-    padding: 1em;
-    margin: 0.5em;
+#repository-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.repo-card-item {
-    padding: 0.25em;
-    max-width: 500px;
+#title {
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+
+#list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.repository-card {
+    width: 35%;
+    min-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0.75em auto;
+    box-shadow: 5px 5px 10px #ccc;
+}
+
+.repository-card-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75em;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.75em;
+    box-shadow: 5px 5px 10px #ccc;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.repository-card-body {
+    padding: 0.75em;
+}
+
+.repository-card-body a {
+    text-decoration: none;
+}
+
+.repo-name {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.repo-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.repo-stats p {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.star-icon {
+    color: gold;
+}
+
+@media (max-width: 400px) {
+    .repository-card {
+        width: 100%;
+        min-width: unset;
+    }
 }

@@ -1,3 +1,16 @@
+#repository-list-pagination {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+#repository-list-pagination ul {
+    padding: 0;
+}
+
 #repository-list-pagination li {
     color: black;
     float: left;
@@ -13,4 +26,10 @@
 }
 #repository-list-pagination li:hover:not(.active) {
     background-color: #ddd;
+}
+
+@media (max-width: 400px) {
+    #repository-list-pagination li {
+        padding: 4px 8px;
+    }
 }

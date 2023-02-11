@@ -1,0 +1,10 @@
+#repository-list-sort {
+    padding-inline: 1em;
+    margin: 1.5em;
+}
+
+#select-sort {
+    margin-inline: 0.5em;
+    outline: none;
+    cursor: pointer;
+}

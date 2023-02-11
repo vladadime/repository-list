@@ -7,22 +7,22 @@ const sortValues = [
         sortBy: "forks",
         orderBy: "asc",
         value: "fa",
-        text: "By number of forks ascending"
+        text: "By fork count ascending"
     }, {
         sortBy: "forks",
         orderBy: "desc",
         value: "fd",
-        text: "By number of forks descending"
+        text: "By fork count descending"
     }, {
         sortBy: "stars",
         orderBy: "asc",
         value: "sa",
-        text: "By number of stars ascending"
+        text: "By star count ascending"
     }, {
         sortBy: "stars",
         orderBy: "desc",
         value: "sd",
-        text: "By number of stars descending"
+        text: "By star count descending"
     }
 ];
 
@@ -77,14 +77,12 @@ const HomePage = () => {
 
     return (
         <div id="home-page">
-            <nav>
-                <Header onClick={(event) => changeTab(event)}/>
-            </nav>
+            <Header onClick={(event) => changeTab(event)}/>
             <div id="content">
                 <div id="repository-list-sort">
                     <div id="sort">
                         <span>Sort By:</span>
-                        <select
+                        <select id="select-sort"
                             value={sort.substring(0, 1) + order.substring(0, 1)}
                             onChange={e => onSortSelect(e)}>
                             {sortValues.map((item, index) => (
@@ -93,7 +91,8 @@ const HomePage = () => {
                         </select>
                     </div>
                 </div>
-                <RepositoryList data={gitRepos}/> {totalRecords && <Pagination
+                <RepositoryList data={gitRepos}/> 
+                {totalRecords && <Pagination
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
                     totalRecords={totalRecords}
