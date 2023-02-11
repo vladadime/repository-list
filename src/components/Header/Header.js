@@ -4,14 +4,13 @@ const Header = ({onClick}) => {
     const tabs = ["React", "Vue", "Angular"];
 
     return (
-        <header id="header">
-            <ul id="tabs">
+        <nav id="navbar">
+            <ul id="navbar-list">
                 {tabs.map((item, index) => (
-                    <li className="tab-item" key={index} onClick={onClick}>{item}</li>
+                    <li className="navbar-item" key={index} onClick={onClick}><span>{item}</span></li>
                 ))}
             </ul>
-            <hr/>
-        </header>
+        </nav>
     )
 }
 

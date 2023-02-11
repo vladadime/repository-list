@@ -21,7 +21,7 @@ const Repository = () => {
     };
 
     const getContributors = async() => {
-        const gitReposFromServer = await fetch(repoUrl + "/contributors");
+        const gitReposFromServer = await fetch(repoUrl + "/contributors?q=per_page=10");
         const data = await gitReposFromServer.json();
         setContributos(data);
     };
@@ -39,33 +39,59 @@ const Repository = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Repository: {repositoryName}</h1>
+        <div id="repository-page">
             {Object
                 .keys(gitRepo)
-                .length && <div>
-                    <div>{gitRepo.name}</div>
-                    <div>{gitRepo.stargazers_count}</div>
-                    <div>{gitRepo.forks_count}</div>
-                    <div>{gitRepo.owner.login}</div>
-                    <div>{gitRepo.owner.avatar_url}</div>
-                    <div>{gitRepo.open_issues_count}</div>
-                    <h3>Contributors:</h3>
-                    {contributors.map((item) => (
-                        <div key={item.id}>
-                            <span>{item.login}</span>
+                .length && <div id="repository-container">
+                    <div id="repository-info-container">
+                        <div id="profile-picture-container">
+                            <img id="profile-picture" src={gitRepo.owner.avatar_url} alt="User Avatar"/>
                         </div>
-                    ))}
-                    <h3>Languages:</h3>
-                    {Object
-                        .keys(languages)
-                        .map((item, index) => (
-                            <div key={index}>
-                                <span>{item}</span>
+                        <div id="repository-info">
+                            <div id="repository-name">Repository name:{gitRepo.name}</div>
+                            <div id="repository-stats">
+                                <div className="repo-stat">
+                                    <span className="repo-label-title">Username: </span>
+                                    <span className="repo-stat-value">{gitRepo.owner.login}</span>
+                                </div>
+                                <div className="repo-stat">
+                                    <span className="star-icon">&#9733;</span>
+                                    <span className="repo-stat-value">{gitRepo.stargazers_count} stars</span>
+                                </div>
+                                <div className="repo-stat">
+                                    <span className="fork-icon">&#9282;</span>
+                                    <span className="repo-stat-value">{gitRepo.forks_count} forks</span>
+                                </div>
+                                <div className="repo-stat">
+                                    <span className="repo-label-title">Open Issues:</span>
+                                    <span className="repo-stat-value">{gitRepo.open_issues_count} issues</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="languages-list">
+                        <h2>Programming Languages:</h2>
+                        {Object
+                            .keys(languages)
+                            .map((item, index) => (
+                                <div className="language" key={index}>{item}</div>
+                            ))}
+                    </div>
+
+                    <div id="contributors-list">
+                        <h2>Contributors:</h2>
+                        {contributors.map((item) => (
+                            <div className="contributor" key={item.id}>
+                                <img
+                                    className="contributor-avatar"
+                                    src={item.avatar_url}
+                                    alt="Contributor Avatar"/>
+                                <div className="contributor-name">{item.login}</div>
                             </div>
                         ))}
-                </div>
-}
+                    </div>
+                </div>}
         </div>
     )
 }
